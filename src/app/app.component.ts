@@ -17,13 +17,16 @@ export class AppComponent implements OnInit {
   }
 cityName:string = 'Delhi';
   weatherData?: WeatherData;
+  forecastData?:any;
 
   ngOnInit(): void {
     this.getWeatherData(this.cityName);
+    this.getForecast(this.cityName);
     this.cityName='';
   }
 onSubmit(){
 this.getWeatherData(this.cityName);
+this.getForecast(this.cityName);
 this.cityName='';
 }
 
@@ -38,6 +41,17 @@ private getWeatherData(cityName:string){
         }
       });
 
+}
+private getForecast(cityName:string){
+  this.weatherService.getForecast(cityName)
+  .subscribe({
+    next: (resp) => {
+
+      this.forecastData = resp;
+      console.log(resp);
+
+    }
+  });
 }
 
 

@@ -23,4 +23,17 @@ export class WeatherService {
     })
 
   }
+  getForecast(cityName:string){
+    return this.http.get(environment.forecastUrl,{
+      headers:new HttpHeaders()
+      .set(environment.XRapidAPIHostHeaderName,environment.XRapidAPIHostHeaderValue)
+      .set(environment.XRapidAPIKeyHeaderName,environment.XRapidAPIKeyHeaderValue),
+      params: new HttpParams()
+      .set('q',cityName)
+      .set('units','metric')
+      .set('mode','json')
+      .set('cnt',7)
+
+    })
+  }
 }

@@ -1,6 +1,6 @@
 <div class="search">
   <form #form="ngForm" (submit)="onSubmit()">
-      <input type="text" placeholder="Search by City" name="city" [(ngModel)]="cityName">
+    <input type="text" placeholder="Search by City" name="city" [(ngModel)]="cityName">
   </form>
 </div>
 
@@ -58,10 +58,29 @@
   </div>
 </div>
 
+<div>
+
+
+  <div class="card d-inline-block " style="width: 18rem;" *ngFor="let forecast of forecastData.list">
+
+    <div class="card-body">
+
+      <h6 class="card-title fw-bold">{{(forecast.dt*1000+(forecastData.city.timezone*1000)) | date:'MMM d, yy | HH:mm
+        '}}Hrs </h6>
+
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item text-center">Max°T: {{forecast.temp.max | number: '1.0-0'}}°C</li>
+      <li class="list-group-item text-center">Min°T: {{forecast.temp.min | number: '1.0-0'}}°C</li>
+      <li class="list-group-item text-center"><img src="http://openweathermap.org/img/wn/{{forecast.weather[0].icon}}.png">{{forecast.weather[0].description}}
+      </li>
+    </ul>
+
+  </div>
 
 
 
-
+</div>
 
 
 

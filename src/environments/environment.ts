@@ -9,7 +9,9 @@ export const environment = {
   XRapidAPIHostHeaderValue:'community-open-weather-map.p.rapidapi.com',
   XRapidAPIKeyHeaderName:'X-RapidAPI-Key',
   XRapidAPIKeyHeaderValue:
-  '9c60fc52famsh57b3f8ff263f0d7p163f40jsn94c031fcca3a'
+  '9c60fc52famsh57b3f8ff263f0d7p163f40jsn94c031fcca3a',
+  forecastUrl:'https://community-open-weather-map.p.rapidapi.com/forecast/daily'
+
 };
 
 /*

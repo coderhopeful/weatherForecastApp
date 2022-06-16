@@ -12,8 +12,8 @@ body {
     height: 100vh;
     background-color: #001233;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
 
 }
 
@@ -33,6 +33,16 @@ body {
     height: 50%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+.card{
+    margin-top:30px;
+    margin-left:30px;
+    background-color:#0353A4;
+    color:orange;
+    font-weight: bold;
+    
+
 }
 
 .lower-data {
